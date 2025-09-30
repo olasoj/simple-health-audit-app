@@ -57,7 +57,7 @@ public class HealthDetailsResponse implements Serializable {
 
         @Serial
         private final static long serialVersionUID = -781085023521159456L;
-        @JsonProperty("service-name")
+        @JsonProperty("serviceName")
         private String serviceName;
         @JsonProperty("version")
         private String version;

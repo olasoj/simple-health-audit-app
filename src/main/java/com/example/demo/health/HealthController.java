@@ -1,5 +1,11 @@
 package com.example.demo.health;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/health")
+@Tag(name = "Health API", description = "Endpoints for health operation")
 public class HealthController {
 
     private final HealthService healthService;
@@ -17,6 +24,19 @@ public class HealthController {
     }
 
     @GetMapping(value = "/details")
+    @Operation(summary = "Health Details API", description = "Retrieve health details")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Service is UP",
+                    content = @Content(schema = @Schema(implementation = HealthDetailsResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "503",
+                    description = "Service is DOWN",
+                    content = @Content(schema = @Schema(implementation = HealthDetailsResponse.class))
+            )
+    })
     public ResponseEntity<HealthDetailsResponse> sendLink() {
 
         HealthDetailsResponse healthDetails = healthService.getHealthDetails();
