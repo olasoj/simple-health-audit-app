@@ -15,7 +15,7 @@ This project made no use of environmental variables.
 Clone the project
 
 ```bash
-   git clone -b main https://github.com/olasoj/simple-health-audit-app.git
+   git clone -b master https://github.com/olasoj/simple-health-audit-app.git
 ```
 
 Go to the project directory
