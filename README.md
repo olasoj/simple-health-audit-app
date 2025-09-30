@@ -1,6 +1,6 @@
-# Demo Controller
+# Health & Audit Controller
 
-A Demo Controller exposes health and Audit functionality .
+An app exposes health and Audit functionality .
 
 ## Authors
 
