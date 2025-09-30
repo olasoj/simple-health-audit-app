@@ -32,7 +32,7 @@ public class HealthDetailsResponse implements Serializable {
     @JsonProperty("metadata")
     private Metadata metadata;
     @JsonIgnore
-    private final Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    private final Map<String, Object> additionalProperties = new LinkedHashMap<>();
 
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
@@ -64,7 +64,7 @@ public class HealthDetailsResponse implements Serializable {
         @JsonProperty("environment")
         private String environment;
         @JsonIgnore
-        private final Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+        private final Map<String, Object> additionalProperties = new LinkedHashMap<>();
 
         @JsonAnyGetter
         public Map<String, Object> getAdditionalProperties() {

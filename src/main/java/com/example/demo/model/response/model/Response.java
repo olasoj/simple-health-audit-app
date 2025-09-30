@@ -41,7 +41,7 @@ public class Response<T extends Serializable> implements Serializable {
     }
 
     public static <T extends Serializable> ResponseBuilder<T> builder(){
-        return new ResponseBuilder<T>();
+        return new ResponseBuilder<>();
     }
 
     public static class ResponseBuilder<B extends Serializable> {
